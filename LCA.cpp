@@ -51,6 +51,10 @@ int consultarLCA(int a,int b){
 	if(a==b){
 		return a;
 	}
+	if(memoLCA[0][a]!=memoLCA[0][b]){
+       		///nodo "a" y "b" no están en el mismo árbol
+        	return -1;
+	}
 	return memoLCA[0][a];
 }
 int main()
@@ -68,7 +72,7 @@ int main()
 		}else{
 			cin>>a>>b;
 			cout<<consultarLCA(a,b)<<"\n";
-		}	
+		}
 	}
-	return 0;	
+	return 0;
 }
